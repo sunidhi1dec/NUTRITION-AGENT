@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Nutrition Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="sidebar">
+    <h2>Nutrition AI</h2>
+    <a href="/">Home</a>
+</div>
+
+<div class="main-content">
+    <h1>Get Your Personalized Meal Plan</h1>
+    <form method="POST">
+        <label>Goals:</label>
+        <input type="text" name="goals" required>
+
+        <label>Medical Conditions:</label>
+        <input type="text" name="conditions" required>
+
+        <label>Preferences:</label>
+        <select name="preferences">
+            {% for option in preference_options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Generate 3-Day Meal Plan</button>
+    </form>
+</div>
+</body>
+</html>

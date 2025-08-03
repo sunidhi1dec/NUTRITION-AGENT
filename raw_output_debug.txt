@@ -1,0 +1,17 @@
+{
+  "days": [
+    {
+      "day": "Day 1",
+      "meals": [
+        {
+          "type": "Breakfast",
+          "item": "Oatmeal with fruits",
+          "why": "High fiber for energy",
+          "calories": 350,
+          "macros": {"protein": 12, "carbs": 50, "fat": 10}
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    background-color: #f7f9fc;
+}
+.sidebar {
+    width: 220px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+}
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 15px 0;
+}
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+}
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+.day-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.meal-card {
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+}
+.meal-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    float: left;
+    margin-right: 10px;
+}
+.chart-container {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #1f8a4c;
+}

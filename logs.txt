@@ -1,0 +1,46 @@
+
+--- 2025-08-03 17:09:02.082224 ---
+Daily Calories: 1500
+
+    {
+"days": [
+{
+"day": "
+
+--- RETRY 2025-08-03 17:09:02.877004 ---
+
+
+Generate a 3-day structured meal plan in exactly this format:
+
+{
+"days
+
+--- 2025-08-03 17:13:37.910729 ---
+{
+"days": [
+{
+"day": "Day 1",
+"meals
+
+--- RETRY 2025-08-03 17:13:38.817752 ---
+
+
+Generate a 3-day structured meal plan in exactly this format:
+
+{
+"days
+
+--- 2025-08-03 17:13:54.495100 ---
+{
+"days": [
+{
+"day": "Day 1",
+"meals
+
+--- RETRY 2025-08-03 17:13:55.340335 ---
+
+
+Generate a 7-day structured meal plan in exactly this format:
+
+{
+"days
