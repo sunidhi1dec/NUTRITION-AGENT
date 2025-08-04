@@ -40,6 +40,30 @@
             object-fit: cover;
             border-radius: 8px;
         }
+        .download-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .download-btn {
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .download-btn:active {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -58,6 +82,19 @@
                 <pre>{{ raw_output_debug }}</pre>
             {% endif %}
         {% else %}
+            <!-- Download Section -->
+            <div class="download-section">
+                <h4 class="mb-3">Download Your Meal Plan</h4>
+                <p class="mb-3">Save your personalized meal plan as a PDF for easy access and printing.</p>
+
+                <form method="POST" action="/download_pdf" style="display: inline;">
+                    <button type="submit" class="download-btn">
+                        <i class="fas fa-download me-2"></i>Download PDF
+                    </button>
+                </form>
+            </div>
+
+            <!-- Meal Plan Display -->
             <div class="row">
                 {% for day in meal_plan.days %}
                 <div class="col-md-4">
@@ -65,14 +102,20 @@
                         <h4 class="mb-3">Day {{ loop.index }}</h4>
                         {% for meal in day.meals %}
                         <div class="mb-3">
-                            <img src="{{ meal.image or '/static/images/meal.jpg' }}" alt="meal" class="meal-img mb-2">
+                            <img src="{{ meal.image or '/static/images/meal.jpeg' }}" alt="meal" class="meal-img mb-2">
                             <p><strong>{{ meal.type }}:</strong> {{ meal.item }}</p>
                             <p><em>{{ meal.why }}</em></p>
                             <p>Calories: {{ meal.calories }}</p>
                             <small>
-                                P: {{ meal.protein }}g,
-                                C: {{ meal.carbs }}g,
-                                F: {{ meal.fats }}g
+                                {% if meal.macros %}
+                                    P: {{ meal.macros.protein }}g,
+                                    C: {{ meal.macros.carbs }}g,
+                                    F: {{ meal.macros.fat }}g
+                                {% else %}
+                                    P: {{ meal.protein }}g,
+                                    C: {{ meal.carbs }}g,
+                                    F: {{ meal.fats }}g
+                                {% endif %}
                             </small>
                         </div>
                         {% endfor %}
@@ -82,5 +125,8 @@
             </div>
         {% endif %}
     </div>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
 </body>
 </html>
