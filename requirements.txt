@@ -3,3 +3,4 @@ ibm-watsonx-ai
 langchain-ibm
 python-dotenv
 pdfkit
+reportlab
